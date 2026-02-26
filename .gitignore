@@ -1,0 +1,56 @@
+# Build
+bin/
+obj/
+
+# User files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+logs/
+
+# Temp
+*.tmp
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# NuGet
+*.nupkg
+packages/
+
+# Publish
+publish/
+wwwroot/uploads/
+
+# Tests
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Docker
+docker-compose.override.yml
+.env

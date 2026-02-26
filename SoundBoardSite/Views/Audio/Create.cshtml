@@ -1,0 +1,43 @@
+@model AudioCreateVm
+@{
+    var categories = ViewBag.Categories as List<Category> ?? new();
+}
+
+<h1>Upload Audio</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div>
+        <label asp-for="Label"></label>
+        <input asp-for="Label" />
+        <span asp-validation-for="Label"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div>
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId">
+            @foreach (var c in categories)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CategoryId"></span>
+    </div>
+
+    <div>
+        <label asp-for="Mp3">MP3 File</label>
+        <input asp-for="Mp3" type="file" accept=".mp3,audio/mpeg" />
+        <span asp-validation-for="Mp3"></span>
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
